@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333333;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5427e;
+  padding: 16px 40px;
+}
+
+.logo {
+  color: white;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+#sobre-mi {
+  text-align: center;
+}
+
+img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.tarjetas {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  flex: 1 1 200px;
+  background-color: #ef42f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #e5e5ee;
+}
