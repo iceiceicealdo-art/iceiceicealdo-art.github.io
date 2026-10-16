@@ -145,20 +145,72 @@ nav a:hover {
         margin: 0 0.75rem;
     }
 }
+/* Estilo del botón en el menú */
 #btn-tema {
-  margin-left: 20px;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-body.oscuro {
-  background-color: #1e1e2e;
-  color: #f0f0f0;
+#btn-tema:hover {
+    background-color: var(--primary-hover);
 }
 
-body.oscuro .tarjeta,
-body.oscuro footer {
-  background-color: #2b2b3d;
+/* --- MODO CLARO COMPLETO --- */
+body.modo-claro {
+    background-color: #F8FAFC !important;
+    color: #0F172A !important;
+}
+
+/* Cambiar encabezado y navegación */
+body.modo-claro header {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+}
+
+body.modo-claro nav a {
+    color: #334155 !important;
+}
+
+body.modo-claro nav a:hover {
+    color: #0F172A !important;
+}
+
+/* Cambiar textos de la sección Hero / Sobre mí */
+body.modo-claro .hero h2,
+body.modo-claro h2,
+body.modo-claro h3,
+body.modo-claro h4 {
+    color: #0F172A !important;
+}
+
+body.modo-claro .hero p,
+body.modo-claro p {
+    color: #475569 !important;
+}
+
+/* Cambiar tarjetas de proyectos */
+body.modo-claro .card {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Cambiar etiquetas de tecnologías */
+body.modo-claro #tecnologias span {
+    background-color: #E2E8F0 !important;
+    color: #1E293B !important;
+    border: 1px solid #CBD5E1 !important;
+}
+
+/* Cambiar el pie de página */
+body.modo-claro footer {
+    border-top: 1px solid #E2E8F0 !important;
+    color: #64748B !important;
 }
