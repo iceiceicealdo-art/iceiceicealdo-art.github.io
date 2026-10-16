@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi portafolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldo Castillo | Portafolio Profesional</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h2 class="logo">[ALDO CASTILLO]</h2>
-    <nav>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+    <!-- Encabezado y Navegación -->
+    <header>
+        <div class="logo">ALDO CASTILLO</div>
+        <nav>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#tecnologias">Tecnologías</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-  <main>
-    <section id="sobre-mi">
-      <img src="foto.jpeg" alt="Foto de perfil">
-      <h1>Hola, soy [ALDO CASTILLO]</h1>
-      <p>Creo páginas web para negocios.</p>
+    <!-- Sección Principal / Bienvenida -->
+    <section id="sobre-mi" class="hero">
+        <img src="foto.jpeg" alt="Foto de Aldo Castillo">
+        <h2>Hola, soy Aldo Castillo</h2>
+        <p>Estudiante de Ingeniería de Sistemas y Desarrollador de Software. Enfocado en la creación de aplicaciones web, bases de datos y soluciones tecnológicas eficientes.</p>
     </section>
 
-    <section id="proyectos">
-      <h2>Proyectos</h2>
-      <div class="tarjetas">
-        <div class="tarjeta">
-          <h3>Mi primera página</h3>
-          <p>Página personal hecha con HTML y CSS.</p>
+    <!-- Sección Habilidades y Tecnologías -->
+    <section id="tecnologias" style="padding: 2rem 8%; text-align: center;">
+        <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Tecnologías & Herramientas</h3>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;">
+            <span style="background: #1E293B; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1);">Java</span>
+            <span style="background: #1E293B; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1);">SQL Server</span>
+            <span style="background: #1E293B; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1);">HTML5 & CSS3</span>
+            <span style="background: #1E293B; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1);">Git & GitHub</span>
+            <span style="background: #1E293B; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1);">VS Code</span>
         </div>
-        <div class="tarjeta">
-          <h3>Proyecto 2</h3>
-          <p>Aquí irá la landing page de un negocio.</p>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section id="proyectos" class="proyectos-container">
+        <h3>Proyectos Destacados</h3>
+        <div class="grid-proyectos">
+            <div class="card">
+                <h4>Portafolio Web Personal</h4>
+                <p>Página web responsive diseñada para mostrar mis proyectos, habilidades y perfil profesional. Desplegado públicamente en GitHub Pages.</p>
+            </div>
+            <div class="card">
+                <h4>Sistema de Gestión & Base de Datos</h4>
+                <p>Diseño e implementación de modelo relacional en SQL Server con consultas avanzadas y gestión de datos optimizada.</p>
+            </div>
+            <div class="card">
+                <h4>Aplicación Java</h4>
+                <p>Desarrollo de módulos funcionales orientados a objetos en Java utilizando NetBeans e integración con base de datos.</p>
+            </div>
         </div>
-        <div class="tarjeta">
-          <h3>Proyecto 3</h3>
-          <p>Descripción del proyecto 3.</p>
-      </div>
     </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Escríbeme a: iceiceicealdo@gmail.com</p>
+    <!-- Sección de Contacto (Protegiendo tu Privacidad) -->
+    <section id="contacto" style="padding: 3rem 8%; text-align: center;">
+        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Contacto</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Si deseas ponerte en contacto conmigo para proyectos o colaboraciones profesional:</p>
+        <a href="https://github.com/iceiceicealdo-art" target="_blank" style="display: inline-block; background-color: var(--primary); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Ver mi GitHub</a>
     </section>
-  </main>
 
-  <footer>
-    <p>© 2026 [ALDO CASTILLO]</p>
-  </footer>
+    <!-- Pie de página -->
+    <footer style="text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.85rem;">
+        <p>&copy; 2026 Aldo Castillo. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>
