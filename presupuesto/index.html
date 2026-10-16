@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de presupuesto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="logo">Calculadora de presupuesto</h2>
+    <nav>
+      <a href="index.html">← Volver al portafolio</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="calculadora">
+        <label for="horas">Horas de trabajo</label>
+        <input type="number" id="horas" min="0" placeholder="Ej: 10">
+
+        <label for="tarifa">Tarifa por hora</label>
+        <input type="number" id="tarifa" min="0" placeholder="Ej: 25">
+
+        <label for="descuento">Descuento (%)</label>
+        <input type="number" id="descuento" min="0" max="100" placeholder="Ej: 10">
+
+        <button id="btn-calcular">Calcular</button>
+        <p id="resultado"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="presupuesto.js"></script>
+</body>
+</html>
