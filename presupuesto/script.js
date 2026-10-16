@@ -1,30 +1,23 @@
-// Esperar a que el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
+    const boton = document.getElementById('btn-calcular');
+    const resultado = document.getElementById('resultado');
 
-    // 1. Obtener el botón por su id (o por etiqueta si no tiene id)
-    const botonCalcular = document.getElementById('btn-calcular') || document.querySelector('button');
-    const resultadoDiv = document.getElementById('resultado');
-
-    if (botonCalcular) {
-        botonCalcular.addEventListener('click', () => {
-            // 2. Obtener los valores de los inputs
+    if (boton) {
+        boton.addEventListener('click', () => {
+            // Leer los valores ingresados por el usuario
             const horas = parseFloat(document.getElementById('horas').value) || 0;
             const tarifa = parseFloat(document.getElementById('tarifa').value) || 0;
             const descuento = parseFloat(document.getElementById('descuento').value) || 0;
 
-            // 3. Realizar las operaciones matemáticas
+            // Operación matemática
             const subtotal = horas * tarifa;
             const montoDescuento = subtotal * (descuento / 100);
             const total = subtotal - montoDescuento;
 
-            // 4. Mostrar el resultado en pantalla
-            if (resultadoDiv) {
-                resultadoDiv.style.display = 'block';
-                resultadoDiv.innerHTML = `<strong>Total a Cobrar:</strong> S/ ${total.toFixed(2)}`;
-            } else {
-                alert(`Total a Cobrar: S/ ${total.toFixed(2)}`);
+            // Mostrar el resultado en el párrafo
+            if (resultado) {
+                resultado.innerHTML = `<strong>Total a cobrar:</strong> S/ ${total.toFixed(2)}`;
             }
         });
     }
-
 });
