@@ -1,66 +1,51 @@
-/* Configuración General */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-color: #0f172a;
     color: #f8fafc;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-/* Enlace Volver */
-a {
-    color: #38bdf8;
-    text-decoration: none;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-bottom: 1rem;
-    transition: color 0.2s;
-}
-
-a:hover {
-    color: #7dd3fc;
-}
-
-/* Tarjeta Contenedora Principal */
-.calculadora {
-    background-color: #1e293b;
-    padding: 2rem;
-    border-radius: 12px;
+main {
     width: 100%;
-    max-width: 420px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 400px;
 }
 
-h1, h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
+.calculadora {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.calculadora h2 {
+    font-size: 1.4rem;
     text-align: center;
+    margin-bottom: 10px;
+    color: #ffffff;
 }
 
-/* Campos de entrada y etiquetas */
 label {
-    display: block;
     font-size: 0.9rem;
-    margin-bottom: 0.4rem;
-    color: #cbd5e1;
+    color: #94a3b8;
 }
 
 input {
     width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1.25rem;
-    border-radius: 8px;
+    padding: 10px 14px;
+    border-radius: 6px;
     border: 1px solid #334155;
     background-color: #0f172a;
     color: #ffffff;
@@ -70,19 +55,18 @@ input {
 }
 
 input:focus {
-    border-color: #38bdf8;
+    border-color: #3b82f6;
 }
 
-/* Botón de calcular */
 button {
-    width: 100%;
-    padding: 0.85rem;
+    margin-top: 10px;
+    padding: 12px;
     background-color: #2563eb;
-    color: #ffffff;
+    color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s;
 }
@@ -91,15 +75,12 @@ button:hover {
     background-color: #1d4ed8;
 }
 
-/* Contenedor del Resultado */
-#resultado, #resultado-presupuesto {
-    margin-top: 1.5rem;
-    padding: 1rem;
+#resultado {
+    margin-top: 10px;
+    padding: 12px;
     background-color: #0f172a;
-    border-radius: 8px;
-    border-left: 4px solid #38bdf8;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #38bdf8;
+    border-radius: 6px;
     text-align: center;
+    color: #38bdf8;
+    font-size: 1.1rem;
 }
