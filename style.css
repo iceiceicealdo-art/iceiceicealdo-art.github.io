@@ -202,6 +202,10 @@ body.modo-claro .card {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
 
+body.modo-claro a.card .card-btn {
+    color: var(--primary) !important;
+}
+
 /* Cambiar etiquetas de tecnologías */
 body.modo-claro #tecnologias span {
     background-color: #E2E8F0 !important;
