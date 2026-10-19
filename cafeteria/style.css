@@ -19,21 +19,37 @@ body {
   align-items: center;
   padding: 16px 40px;
   background-color: #3b2a20;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
   color: #f5e6d3;
   margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.barra nav {
+  display: flex;
+  align-items: center;
 }
 
 .barra nav a {
   color: #f5e6d3;
   text-decoration: none;
-  margin-left: 20px;
+  margin-left: 24px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  padding: 6px 4px;
 }
 
 .barra nav a:hover {
-  text-decoration: underline;
+  color: #d98e4a;
+  text-decoration: none;
 }
 
 .hero {
@@ -53,7 +69,8 @@ body {
   margin-bottom: 30px;
 }
 
-.boton {
+.boton,
+.btn {
   display: inline-block;
   background-color: #d98e4a;
   color: white;
@@ -61,9 +78,11 @@ body {
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.2s;
 }
 
-.boton:hover {
+.boton:hover,
+.btn:hover {
   background-color: #c07a3a;
 }
 
@@ -82,24 +101,49 @@ body {
 }
 
 .platos {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
 }
 
 .plato {
-  flex: 1 1 200px;
   background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(111, 78, 55, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plato:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(111, 78, 55, 0.18);
+}
+
+.plato h3 {
+  margin: 0 0 10px;
+  color: #3b2a20;
+  font-size: 1.25rem;
+}
+
+.plato p {
+  color: #6b5b52;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
 .precio {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
   color: #d98e4a;
+  display: block;
 }
 
 form {
@@ -148,22 +192,150 @@ footer {
   color: #f5e6d3;
 }
 
-@media (max-width: 600px) {
+/* Mensaje flotante de confirmación (Toast) */
+.mensaje-flotante {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #3b2a20;
+  color: #fffaf5;
+  border-left: 5px solid #d98e4a;
+  padding: 16px 22px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: 90vw;
+}
+
+.mensaje-flotante.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mensaje-flotante .icono {
+  font-size: 22px;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Pantallas grandes y Laptops (1024px o más) */
+@media (min-width: 1024px) {
   .barra {
-    flex-direction: column;
-    gap: 10px;
-    padding: 16px 20px;
+    padding: 18px 80px;
   }
 
-  .barra nav a {
-    margin: 0 10px;
-  }
-
-  .hero {
+  .seccion {
+    max-width: 1050px;
     padding: 60px 20px;
   }
 
+  .platos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Tablets y pantallas medianas (hasta 768px) */
+@media (max-width: 768px) {
+  .barra {
+    padding: 14px 24px;
+  }
+
+  .barra nav a {
+    margin-left: 16px;
+  }
+
+  .platos {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Celulares / Móviles (hasta 600px) */
+@media (max-width: 600px) {
+  /* Menú de navegación en móviles */
+  .barra {
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .barra nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .barra nav a {
+    margin: 0;
+    padding: 8px 14px;
+    background: rgba(245, 230, 211, 0.1);
+    border-radius: 20px;
+    font-size: 0.95rem;
+  }
+
+  .barra nav a:hover {
+    background: rgba(217, 142, 74, 0.25);
+  }
+
+  /* Sección Hero en móviles */
+  .hero {
+    padding: 50px 16px;
+  }
+
   .hero h1 {
-    font-size: 32px;
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .hero p {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  /* Menú de platos / productos en móviles (1 columna completa para máxima legibilidad) */
+  .seccion {
+    padding: 40px 16px;
+  }
+
+  .platos {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .plato {
+    padding: 20px 16px;
+  }
+
+  /* Formulario en móviles (evita zoom involuntario con font-size: 16px) */
+  form {
+    padding: 0 4px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 16px;
+  }
+
+  /* Mensaje flotante centrado en móviles */
+  .mensaje-flotante {
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    padding: 14px 18px;
   }
 }

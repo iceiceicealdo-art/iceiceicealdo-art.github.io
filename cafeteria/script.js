@@ -22,4 +22,44 @@ formulario.addEventListener("submit", function (evento) {
 
   respuesta.textContent = "¡Gracias, " + nombre + "! Te responderemos pronto.";
   respuesta.className = "exito";
+
+  // Mostrar mensaje flotante de confirmación
+  mostrarMensajeFlotante(`¡Gracias, ${nombre}! Tu mensaje ha sido enviado con éxito.`);
+
   formulario.reset();
+});
+
+/**
+ * Muestra una notificación flotante de confirmación temporal en pantalla
+ */
+function mostrarMensajeFlotante(mensaje) {
+  // Remover mensaje previo si todavía está activo
+  const mensajePrevio = document.getElementById("mensaje-flotante");
+  if (mensajePrevio) {
+    mensajePrevio.remove();
+  }
+
+  // Crear el contenedor flotante
+  const toast = document.createElement("div");
+  toast.id = "mensaje-flotante";
+  toast.className = "mensaje-flotante";
+  toast.innerHTML = `
+    <span class="icono">☕</span>
+    <span class="texto">${mensaje}</span>
+  `;
+
+  document.body.appendChild(toast);
+
+  // Animación de entrada
+  setTimeout(() => {
+    toast.classList.add("visible");
+  }, 10);
+
+  // Animación de salida y remoción tras 4 segundos
+  setTimeout(() => {
+    toast.classList.remove("visible");
+    setTimeout(() => {
+      toast.remove();
+    }, 400);
+  }, 4000);
+}
